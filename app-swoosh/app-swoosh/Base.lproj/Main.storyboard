@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="115"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="o7X-5i-wbW">
             <objects>
-                <viewController id="gRz-bb-Bfh" sceneMemberID="viewController">
+                <viewController id="gRz-bb-Bfh" customClass="LeagueVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6vb-Ws-F5w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +155,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ced-ge-ac4" kind="show" id="aCx-9D-GVN"/>
+                                    <action selector="onNextTapped:" destination="gRz-bb-Bfh" eventType="touchUpInside" id="bL7-CG-8a6"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XCA-CH-lC4">
@@ -184,7 +184,7 @@
                                 </constraints>
                                 <state key="normal" image="backButton"/>
                                 <connections>
-                                    <segue destination="JcW-hO-79J" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegue:" id="Cw1-kA-QvU"/>
+                                    <segue destination="JcW-hO-79J" kind="unwind" unwindAction="unwindFromLeagueVCWithUnwindSegue:" id="Pzi-65-ODF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -208,16 +208,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Djl-FD-gIm"/>
                     </view>
+                    <connections>
+                        <segue destination="ced-ge-ac4" kind="show" identifier="skillVCSegue" id="o9y-wY-AM1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjS-8r-BMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JcW-hO-79J" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="780" y="115.14084507042254"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="Jum-Ji-Twd">
             <objects>
-                <viewController id="ced-ge-ac4" sceneMemberID="viewController">
+                <viewController id="ced-ge-ac4" customClass="SkillVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3aw-8O-ZwK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,6 +253,9 @@
                                     <constraint firstAttribute="width" constant="30" id="i44-FY-nT2"/>
                                 </constraints>
                                 <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="dY7-OC-OhA" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegue:" id="20g-dZ-7mR"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="tM3-Yv-CtQ">
                                 <rect key="frame" x="0.0" y="158" width="320" height="50"/>
@@ -313,6 +319,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxg-93-5wy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dY7-OC-OhA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1538" y="115"/>
         </scene>
